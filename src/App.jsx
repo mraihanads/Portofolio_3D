@@ -14,7 +14,6 @@ import AboutSection from './sections/AboutSection';
 import SkillsSection from './sections/SkillsSection';
 import ProjectsSection from './sections/ProjectsSection';
 import ExperienceSection from './sections/ExperienceSection';
-import CertificatesSection from './sections/CertificatesSection';
 import ContactSection from './sections/ContactSection';
 
 import { useMousePosition } from './hooks/useMousePosition';
@@ -69,7 +68,6 @@ export default function App() {
             <SkillsSection />
             <ProjectsSection />
             <ExperienceSection />
-            <CertificatesSection />
             <ContactSection />
           </main>
           <Footer />

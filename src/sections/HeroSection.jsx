@@ -1,7 +1,7 @@
 import { useRef, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Mail } from 'lucide-react';
-import { GithubIcon } from '../components/SocialIcons';
+import { GithubIcon, InstagramIcon } from '../components/SocialIcons';
 import Scene from '../three/Scene';
 import { personalInfo } from '../data';
 
@@ -44,18 +44,6 @@ export default function HeroSection({ mousePosition, isMobile }) {
       {/* Content */}
       <div className="hero-content">
         <div className="hero-left">
-          {/* Badge */}
-          <motion.div
-            className="hero-badge"
-            custom={0}
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <span className="hero-badge-dot" />
-            Founder PT Reyy Digital Group · Creative Developer
-          </motion.div>
-
           {/* Main title */}
           <div className="hero-title-wrapper">
             <motion.h1
@@ -110,6 +98,9 @@ export default function HeroSection({ mousePosition, isMobile }) {
           >
             <a href={personalInfo.github} target="_blank" rel="noreferrer" className="hero-social-link" aria-label="GitHub">
               <GithubIcon size={20} />
+            </a>
+            <a href={personalInfo.instagram} target="_blank" rel="noreferrer" className="hero-social-link" aria-label="Instagram">
+              <InstagramIcon size={20} />
             </a>
             <a href={`mailto:${personalInfo.email}`} className="hero-social-link" aria-label="Email">
               <Mail size={20} />

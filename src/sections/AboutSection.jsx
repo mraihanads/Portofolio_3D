@@ -102,7 +102,7 @@ export default function AboutSection() {
                   <Building2 size={24} />
                 </div>
                 <div>
-                  <span className="about-company-badge">Perusahaan & </span>
+                  <span className="about-company-badge">Perusahaan</span>
                   <h3 className="about-company-name">{personalInfo.company.name}</h3>
                 </div>
               </div>

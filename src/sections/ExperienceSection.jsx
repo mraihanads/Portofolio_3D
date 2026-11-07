@@ -31,7 +31,7 @@ export default function ExperienceSection() {
           </motion.h2>
           <motion.div className="section-divider" variants={fadeUp} />
           <motion.p className="section-desc" variants={fadeUp}>
-            Perjalanan profesional yang memadukan kepemimpinan bisnis di PT Reyy Digital Group, pengembangan marketplace, freelance marketing, dan riset teknologi.
+            Perjalanan profesional yang memadukan kepemimpinan bisnis di PT Reyy Digital Group, pengembangan platform ID-Store.net, bisnis produk digital, affiliate marketing, dan kepemimpinan organisasi.
           </motion.p>
         </motion.div>
 
