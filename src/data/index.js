@@ -16,7 +16,7 @@ export const personalInfo = {
   github: "https://github.com/mraihanads",
   instagram: "https://www.instagram.com/mraihan__01",
   twitter: "https://twitter.com/mraihanads",
-  photo: "/photo-raihan.jpg",
+  photo: "/photo-raihan.png",
   cv: "/cv-muhammad-raihan.pdf",
   company: {
     name: "PT Reyy Digital Group",
