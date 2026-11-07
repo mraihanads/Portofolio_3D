@@ -1661,6 +1661,26 @@ img, svg {
 .modal-actions {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .modal-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .modal-content {
+    padding: 26px 20px !important;
+    max-height: 90vh;
+  }
+  .modal-title {
+    font-size: 1.25rem;
+  }
 }
 
 /* =========================================================
@@ -2490,60 +2510,381 @@ img, svg {
    ========================================================= */
 @media (max-width: 768px) {
   :root {
-    --section-padding: 70px 0;
+    --section-padding: 32px 0;
   }
 
-  .navbar { padding: 14px 20px; }
-  .navbar--scrolled { padding: 10px 20px; }
+  .navbar { padding: 10px 16px; }
+  .navbar--scrolled { padding: 8px 16px; }
 
-  .hero-content { padding: 0 20px; padding-top: 100px; }
+  /* Hero Section Spacing Fix (Resolves huge top & bottom void) */
+  .hero {
+    min-height: auto;
+    padding-top: 72px;
+    padding-bottom: 24px;
+    display: block;
+  }
+
+  .hero-content {
+    padding: 0 16px;
+    padding-top: 0;
+    gap: 0;
+  }
+
+  .hero-title-wrapper {
+    margin-bottom: 12px;
+  }
 
   .hero-title {
-    font-size: clamp(2.8rem, 14vw, 5rem);
+    font-size: clamp(2.3rem, 11vw, 3.8rem);
+    line-height: 1.0;
   }
 
-  .hero-cta { flex-direction: column; align-items: flex-start; }
-  .hero-cta .btn { width: 100%; justify-content: center; }
+  .hero-subtitle {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
 
-  .about-left { flex-direction: column; align-items: center; }
-  .about-stats { grid-template-columns: 1fr 1fr; }
-  .about-cta { flex-direction: column; }
-  .about-cta .btn { width: 100%; justify-content: center; }
+  .hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
 
-  .skills-tabs { gap: 8px; }
-  .skills-tab { padding: 10px 16px; font-size: 0.8rem; }
+  .hero-social {
+    margin-bottom: 8px;
+    gap: 12px;
+  }
 
-  .projects-grid { grid-template-columns: 1fr; }
-  .certificates-grid { grid-template-columns: 1fr; }
+  /* Section Header Tightening */
+  .section-header {
+    margin-bottom: 22px;
+  }
 
-  .modal-content { padding: 24px; }
+  .section-label {
+    margin-bottom: 6px;
+    font-size: 0.72rem;
+  }
 
-  .education-header { flex-direction: column; gap: 8px; }
+  .section-title {
+    font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+    margin-bottom: 8px;
+  }
 
+  .section-divider {
+    margin: 0 auto 12px;
+    width: 44px;
+    height: 2.5px;
+  }
 
-  .timeline-line { left: 16px; }
+  .section-desc {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  /* About Section & Education Tightening */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 22px;
+  }
+
+  .about-left {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .about-stat {
+    padding: 12px 10px;
+  }
+  .about-stat-value {
+    font-size: 1.35rem;
+  }
+  .about-stat-value--sm {
+    font-size: 0.78rem !important;
+    min-height: 2.1rem;
+  }
+
+  .about-right {
+    gap: 14px;
+    padding-top: 0;
+  }
+
+  .about-company-card {
+    padding: 16px 14px;
+    margin-bottom: 8px;
+  }
+
+  .about-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .about-cta {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .about-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .subsection-header {
+    margin-bottom: 14px;
+  }
+
+  .education-timeline {
+    gap: 10px;
+  }
+  .education-item {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+  .education-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* Skills Section Tightening */
+  .skills-tabs {
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  .skills-tab {
+    padding: 7px 12px;
+    font-size: 0.75rem;
+  }
+
+  .skills-content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
 
   .skills-highlight {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    padding: 14px;
   }
 
   .skills-highlight-avg {
     border-left: none;
     padding-left: 0;
     border-top: 1px solid var(--border-glass);
-    padding-top: 10px;
+    padding-top: 8px;
     width: 100%;
+  }
+
+  .skills-icons-row {
+    margin-top: 10px;
+    gap: 6px;
+  }
+
+  /* Projects Section — 2 Kartu Per Baris & Tight Spacing */
+  .projects-filter {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .filter-btn {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .project-card {
+    padding: 14px 12px;
+    gap: 8px;
+    border-radius: var(--radius-md);
+  }
+
+  .project-card-header {
+    margin-bottom: 2px;
+  }
+
+  .project-card-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .project-card-icon span {
+    font-size: 1.1rem !important;
+  }
+
+  .project-icon-btn {
+    width: 26px;
+    height: 26px;
+  }
+
+  .project-icon-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .project-category {
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+  }
+
+  .project-title {
+    font-size: 0.88rem;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.4em;
+  }
+
+  .project-desc {
+    font-size: 0.74rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 2px;
+  }
+
+  .project-tech {
+    gap: 4px;
+  }
+
+  .tech-chip {
+    padding: 2px 5px;
+    font-size: 0.62rem;
+  }
+
+  .project-card-footer {
+    padding-top: 4px;
+    margin-top: auto;
+  }
+
+  .project-view-more {
+    font-size: 0.68rem;
+  }
+
+  /* Experience Section Timeline Tightening (Eliminates bottom void) */
+  .timeline {
+    gap: 14px;
+    padding-bottom: 0 !important;
+  }
+  .timeline-card {
+    padding: 14px 12px;
+  }
+  .timeline-line {
+    left: 16px;
+  }
+  .timeline-desc {
+    font-size: 0.8rem;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+
+  /* Contact Hub & Social Banner Tightening */
+  .contact-hub-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-bottom: 14px !important;
+  }
+  .contact-hub-card:last-child {
+    grid-column: span 2;
+  }
+  .contact-hub-card {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+  .hub-card-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .hub-card-title {
+    font-size: 0.9rem;
+  }
+  .hub-card-value {
+    font-size: 0.76rem;
+  }
+  .hub-card-desc {
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+  .hub-card-btn {
+    padding: 7px 10px;
+    font-size: 0.72rem;
+  }
+
+  .contact-social-banner {
+    padding: 16px 14px !important;
+    gap: 12px !important;
+    margin-bottom: 0 !important;
+  }
+  .social-banner-title {
+    font-size: 1.05rem;
+  }
+  .social-banner-desc {
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+  .social-banner-cards {
+    gap: 8px;
+  }
+  .social-banner-card {
+    padding: 10px 12px;
+  }
+
+  /* Footer Tightening */
+  .footer {
+    padding: 20px 0 16px !important;
+  }
+  .footer-content {
+    gap: 12px !important;
+  }
+  .footer-brand-name {
+    font-size: 1.15rem;
+  }
+  .footer-tagline {
+    font-size: 0.75rem;
+  }
+  .footer-motto {
+    font-size: 0.78rem;
+    margin-bottom: 2px;
+  }
+  .footer-copy {
+    font-size: 0.7rem;
+  }
+
+  .modal-content {
+    padding: 20px 16px !important;
   }
 }
 
 @media (max-width: 480px) {
-  :root { --container-pad: 0 16px; }
+  :root {
+    --container-pad: 0 14px;
+    --section-padding: 26px 0;
+  }
+
+  .hero {
+    padding-top: 66px;
+    padding-bottom: 18px;
+  }
 
   .hero-scroll-btn { display: none; }
 
-  .about-avatar { width: 160px; height: 160px; }
+  .about-avatar { width: 140px; height: 140px; }
 
   .timeline-card-header { flex-direction: column; }
   .exp-period { align-self: flex-start; }
