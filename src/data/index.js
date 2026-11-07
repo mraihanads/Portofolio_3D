@@ -214,7 +214,7 @@ export const projectsData = [
     image: null,
     color: "#06b6d4",
     github: "https://github.com/mraihanads/Portofolio_3D",
-    live: null,
+    live: "https://mraihanads.vercel.app/",
     featured: false,
   },
   {
